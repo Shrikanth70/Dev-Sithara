@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D&amp;S | RSVP Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400&amp;family=Montserrat:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(74, 14, 27, 0.4);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .gold-shimmer {
+            background: linear-gradient(90deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%);
+            background-size: 200% auto;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+        .petal {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); }
+            100% { transform: translateY(110vh) translateX(100px) rotate(360deg); }
+        }
+        .fade-edge::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#574500",
+                      "background": "#230c13",
+                      "surface-container-highest": "#482d34",
+                      "surface-bright": "#4d3139",
+                      "on-tertiary": "#591a26",
+                      "on-tertiary-fixed-variant": "#76303b",
+                      "secondary-container": "#af8d11",
+                      "on-tertiary-container": "#b86570",
+                      "on-secondary": "#3c2f00",
+                      "primary-fixed": "#ffd9dd",
+                      "surface-variant": "#482d34",
+                      "on-tertiary-fixed": "#3d0412",
+                      "on-secondary-container": "#342800",
+                      "surface-container": "#31181f",
+                      "on-secondary-fixed": "#241a00",
+                      "inverse-on-surface": "#442930",
+                      "on-primary": "#4f222b",
+                      "surface-dark": "#1A0309",
+                      "tertiary-fixed": "#ffd9dc",
+                      "surface-tint": "#fab4be",
+                      "secondary": "#e9c349",
+                      "inverse-surface": "#ffd9e1",
+                      "tertiary-fixed-dim": "#ffb2ba",
+                      "surface-dim": "#230c13",
+                      "tertiary-container": "#2f000a",
+                      "on-primary-fixed-variant": "#6a3841",
+                      "inverse-primary": "#854f58",
+                      "outline-variant": "#514345",
+                      "on-error": "#690005",
+                      "on-primary-fixed": "#350d17",
+                      "outline": "#9e8c8e",
+                      "secondary-fixed": "#ffe088",
+                      "surface": "#230c13",
+                      "surface-container-low": "#2c141b",
+                      "secondary-fixed-dim": "#e9c349",
+                      "rose-gold": "#E0B0FF",
+                      "surface-container-lowest": "#1c070e",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#3c222a",
+                      "on-background": "#ffd9e1",
+                      "champagne-gold": "#D4AF37",
+                      "on-primary-container": "#a96d76",
+                      "ivory-white": "#FFF5E1",
+                      "error-container": "#93000a",
+                      "on-surface": "#ffd9e1",
+                      "on-surface-variant": "#d6c2c3",
+                      "primary-fixed-dim": "#fab4be",
+                      "error": "#ffb4ab",
+                      "primary": "#fab4be",
+                      "primary-container": "#2a050e",
+                      "royal-wine": "#4A0E1B",
+                      "tertiary": "#ffb2ba"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "24px",
+                      "gutter": "32px",
+                      "margin-desktop": "80px",
+                      "section-gap": "160px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "display-signature": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-caps": ["Montserrat"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                      "display-signature": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "300"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-champagne-gold/30">
+<!-- Atmospheric Background Particles -->
+<div class="fixed inset-0 pointer-events-none z-0" id="particle-container"></div>
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-royal-wine/40 backdrop-blur-2xl border-b border-champagne-gold/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-display-signature text-headline-lg text-champagne-gold">D&amp;S</div>
+<div class="hidden md:flex gap-10">
+<a class="text-ivory-white/80 font-body-md hover:text-rose-gold transition-colors duration-500" href="#">Our Story</a>
+<a class="text-ivory-white/80 font-body-md hover:text-rose-gold transition-colors duration-500" href="#">Gallery</a>
+<a class="text-ivory-white/80 font-body-md hover:text-rose-gold transition-colors duration-500" href="#">Events</a>
+<a class="text-champagne-gold font-bold border-b-2 border-champagne-gold pb-1" href="#">RSVP</a>
+</div>
+<button class="text-champagne-gold font-label-caps tracking-widest hover:opacity-80 transition-opacity">Telugu / English</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="relative z-10 pt-40 pb-20 px-margin-mobile flex items-center justify-center min-h-screen">
+<!-- Hero Decorative Text -->
+<div class="absolute top-20 left-1/2 -translate-x-1/2 opacity-10 select-none whitespace-nowrap hidden lg:block">
+<span class="font-display-signature text-[200px] text-rose-gold">Celebration of Love</span>
+</div>
+<!-- RSVP Form Card -->
+<div class="glass-card w-full max-w-2xl border border-champagne-gold/20 rounded-lg p-8 md:p-16 relative overflow-hidden shadow-2xl">
+<!-- Glass Overlay Shine -->
+<div class="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-ivory-white/5 to-transparent rotate-12 pointer-events-none"></div>
+<header class="text-center mb-12">
+<span class="font-label-caps text-champagne-gold mb-4 block">KINDLY RESPOND BY OCT 15</span>
+<h1 class="font-headline-lg text-headline-lg md:text-headline-lg text-ivory-white mb-2">Reserve Your Seat</h1>
+<div class="w-12 h-[1px] bg-champagne-gold mx-auto opacity-50"></div>
+</header>
+<form action="#" class="space-y-10" method="POST">
+<!-- Full Name -->
+<div class="relative group">
+<input class="peer w-full bg-transparent border-0 border-b border-champagne-gold/30 py-3 text-ivory-white focus:ring-0 focus:border-champagne-gold transition-colors placeholder-transparent" id="fullname" name="fullname" placeholder=" " required="" type="text"/>
+<label class="absolute left-0 -top-4 text-xs font-label-caps text-champagne-gold/60 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-ivory-white/40 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-champagne-gold" for="fullname">
+                        Full Name
+                    </label>
+</div>
+<!-- Number of Guests -->
+<div class="relative group">
+<input class="peer w-full bg-transparent border-0 border-b border-champagne-gold/30 py-3 text-ivory-white focus:ring-0 focus:border-champagne-gold transition-colors placeholder-transparent" id="guests" max="10" min="1" name="guests" placeholder=" " required="" type="number"/>
+<label class="absolute left-0 -top-4 text-xs font-label-caps text-champagne-gold/60 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-ivory-white/40 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-champagne-gold" for="guests">
+                        Number of Guests
+                    </label>
+</div>
+<!-- Events Attending -->
+<div class="space-y-4">
+<span class="font-label-caps text-champagne-gold/60 text-xs block">EVENTS ATTENDING</span>
+<div class="grid grid-cols-2 gap-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 border border-champagne-gold/30 group-hover:border-champagne-gold transition-colors">
+<input class="peer absolute opacity-0 cursor-pointer" name="events" type="checkbox" value="Mehendi"/>
+<span class="material-symbols-outlined text-champagne-gold text-sm opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<span class="text-ivory-white/80 group-hover:text-ivory-white transition-colors">Mehendi</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 border border-champagne-gold/30 group-hover:border-champagne-gold transition-colors">
+<input class="peer absolute opacity-0 cursor-pointer" name="events" type="checkbox" value="Sangeet"/>
+<span class="material-symbols-outlined text-champagne-gold text-sm opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<span class="text-ivory-white/80 group-hover:text-ivory-white transition-colors">Sangeet</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 border border-champagne-gold/30 group-hover:border-champagne-gold transition-colors">
+<input class="peer absolute opacity-0 cursor-pointer" name="events" type="checkbox" value="Wedding"/>
+<span class="material-symbols-outlined text-champagne-gold text-sm opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<span class="text-ivory-white/80 group-hover:text-ivory-white transition-colors">Wedding</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 border border-champagne-gold/30 group-hover:border-champagne-gold transition-colors">
+<input class="peer absolute opacity-0 cursor-pointer" name="events" type="checkbox" value="Reception"/>
+<span class="material-symbols-outlined text-champagne-gold text-sm opacity-0 peer-checked:opacity-100 transition-opacity">check</span>
+</div>
+<span class="text-ivory-white/80 group-hover:text-ivory-white transition-colors">Reception</span>
+</label>
+</div>
+</div>
+<!-- Dietary Requirements -->
+<div class="relative group">
+<textarea class="peer w-full bg-transparent border-0 border-b border-champagne-gold/30 py-3 text-ivory-white focus:ring-0 focus:border-champagne-gold transition-colors placeholder-transparent resize-none overflow-hidden" id="dietary" name="dietary" placeholder=" " rows="1"></textarea>
+<label class="absolute left-0 -top-4 text-xs font-label-caps text-champagne-gold/60 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-ivory-white/40 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-champagne-gold" for="dietary">
+                        Dietary Requirements
+                    </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-6">
+<button class="w-full gold-shimmer text-on-secondary-container font-label-caps py-5 tracking-[0.3em] uppercase hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-champagne-gold/20 flex items-center justify-center gap-3" type="submit">
+                        Submit with Love
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Floating Side Decoration (Desktop Only) -->
+<div class="fixed right-[5%] bottom-[10%] hidden xl:block w-64 h-80 rounded-lg overflow-hidden border border-champagne-gold/10 group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A close-up shot of a luxury wedding invitation featuring intricate gold foil calligraphy on high-end textured paper. The scene is illuminated by warm, cinematic candlelight that creates a romantic and intimate atmosphere. Soft rose gold petals and delicate gold dust are scattered artistically around the stationery. The color palette consists of deep royal wine and champagne gold accents, embodying a premium editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSSHoRcu9kTK2Nuqmmn_lDACGMaVhd0CjsxxO7vgwxeU_sHSYp10uEDrhx8IXHhH3RsSC8N6GV5dxlszA1RszjMW3NxDb9eOxroahWD5waOcZ6dB9GjeqIGDxwPX4We9znua-evTRDJTe1f1wdTkT3J7_9596bFVTRG1m8O8pX0D1V4tnmzTgaMGtM8bIKXD3aa9CBxutqyHqoz3PTu7TtJN0IYt4Er2YXkTHnsgaQGZSLyye7ZiaCC_VWbfnv_G7X1jgaZcqqZl0"/>
+<div class="absolute inset-0 bg-royal-wine/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="relative z-10 w-full py-20 px-margin-mobile md:px-margin-desktop bg-gradient-to-t from-royal-wine to-surface-dark border-t border-champagne-gold/10">
+<div class="flex flex-col items-center gap-8 w-full max-w-container-max mx-auto">
+<div class="font-display-signature text-headline-md text-rose-gold">Dev &amp; Sithara</div>
+<div class="flex gap-8">
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all font-body-md" href="#">Contact</a>
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all font-body-md" href="#">Venue Map</a>
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all font-body-md" href="#">Guestbook</a>
+</div>
+<div class="text-ivory-white/40 text-xs font-label-caps tracking-widest text-center">
+                © 2024 Dev &amp; Sithara. All rights reserved.
+            </div>
+<button class="mt-4 flex flex-col items-center gap-2 group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-champagne-gold group-hover:-translate-y-1 transition-transform">keyboard_double_arrow_up</span>
+<span class="text-champagne-gold/60 text-[10px] font-label-caps uppercase">Back to Top</span>
+</button>
+</div>
+</footer>
+<script>
+        // Particle Generation for Gold Dust / Petals
+        const container = document.getElementById('particle-container');
+        const particleCount = 25;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            
+            // Random properties
+            const size = Math.random() * 15 + 5;
+            const left = Math.random() * 100;
+            const delay = Math.random() * 20;
+            const duration = Math.random() * 10 + 15;
+            
+            // Randomly pick rose gold or gold dust
+            const isDust = Math.random() > 0.5;
+            petal.style.width = `${size}px`;
+            petal.style.height = isDust ? `${size}px` : `${size * 1.5}px`;
+            petal.style.background = isDust 
+                ? 'radial-gradient(circle, #D4AF37 0%, transparent 70%)'
+                : 'linear-gradient(45deg, #E0B0FF 0%, #D4AF37 100%)';
+            petal.style.borderRadius = isDust ? '50%' : '100% 0% 100% 0%';
+            petal.style.left = `${left}%`;
+            petal.style.top = `-20px`;
+            petal.style.animationDelay = `${-delay}s`;
+            petal.style.animationDuration = `${duration}s`;
+            petal.style.filter = 'blur(1px)';
+            
+            container.appendChild(petal);
+        }
+
+        // Auto-expand textarea
+        const textarea = document.getElementById('dietary');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    </script>
+</body></html>

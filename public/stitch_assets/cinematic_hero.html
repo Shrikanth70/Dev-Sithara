@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dev &amp; Sithara | A Cinematic Wedding Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400&amp;family=Montserrat:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#574500",
+                    "background": "#230c13",
+                    "surface-container-highest": "#482d34",
+                    "surface-bright": "#4d3139",
+                    "on-tertiary": "#591a26",
+                    "on-tertiary-fixed-variant": "#76303b",
+                    "secondary-container": "#af8d11",
+                    "on-tertiary-container": "#b86570",
+                    "on-secondary": "#3c2f00",
+                    "primary-fixed": "#ffd9dd",
+                    "surface-variant": "#482d34",
+                    "on-tertiary-fixed": "#3d0412",
+                    "on-secondary-container": "#342800",
+                    "surface-container": "#31181f",
+                    "on-secondary-fixed": "#241a00",
+                    "inverse-on-surface": "#442930",
+                    "on-primary": "#4f222b",
+                    "surface-dark": "#1A0309",
+                    "tertiary-fixed": "#ffd9dc",
+                    "surface-tint": "#fab4be",
+                    "secondary": "#e9c349",
+                    "inverse-surface": "#ffd9e1",
+                    "tertiary-fixed-dim": "#ffb2ba",
+                    "surface-dim": "#230c13",
+                    "tertiary-container": "#2f000a",
+                    "on-primary-fixed-variant": "#6a3841",
+                    "inverse-primary": "#854f58",
+                    "outline-variant": "#514345",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#350d17",
+                    "outline": "#9e8c8e",
+                    "secondary-fixed": "#ffe088",
+                    "surface": "#230c13",
+                    "surface-container-low": "#2c141b",
+                    "secondary-fixed-dim": "#e9c349",
+                    "rose-gold": "#E0B0FF",
+                    "surface-container-lowest": "#1c070e",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#3c222a",
+                    "on-background": "#ffd9e1",
+                    "champagne-gold": "#D4AF37",
+                    "on-primary-container": "#a96d76",
+                    "ivory-white": "#FFF5E1",
+                    "error-container": "#93000a",
+                    "on-surface": "#ffd9e1",
+                    "on-surface-variant": "#d6c2c3",
+                    "primary-fixed-dim": "#fab4be",
+                    "error": "#ffb4ab",
+                    "primary": "#fab4be",
+                    "primary-container": "#2a050e",
+                    "royal-wine": "#4A0E1B",
+                    "tertiary": "#ffb2ba"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "display-signature": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "display-signature": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "300"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes shimmer {
+            0% { opacity: 0.3; transform: translateY(0) scale(1); }
+            50% { opacity: 0.8; transform: translateY(-20px) scale(1.2); }
+            100% { opacity: 0.3; transform: translateY(-40px) scale(1); }
+        }
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, #D4AF37, transparent);
+            animation: scrollLineAnim 2s infinite ease-in-out;
+        }
+        @keyframes scrollLineAnim {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            50.1% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-champagne-gold selection:text-background overflow-x-hidden">
+<!-- TOP NAVIGATION BAR -->
+<nav class="fixed top-0 w-full z-50 border-b border-champagne-gold/20 bg-royal-wine/40 backdrop-blur-2xl">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="font-display-signature text-headline-lg text-champagne-gold">D&amp;S</div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-10">
+<a class="text-champagne-gold font-bold border-b-2 border-champagne-gold pb-1 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Our Story</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Gallery</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Events</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">RSVP</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps text-champagne-gold tracking-widest hover:text-rose-gold transition-all">
+                    TELUGU / ENGLISH
+                </button>
+<button class="md:hidden text-champagne-gold">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- HERO SECTION -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic Hero" class="w-full h-full object-cover scale-105" id="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9mMPWw_AIvTSD__IItNv7dWH_XgQBHx-yHkOIQ7hn46lfulhIfLWLrQ-499rfyTVlHbaUdjBI0Tz4AhWvVXi3exaEgX9Bpw8hn__vs4r0i45uLGc_nnNDNtGVBiORgvXTABj0JmPa-aHM1FSp-ABcoFdroEVCGIuEK8b4vkfazmhaeuLNLhG1Zd_VQJUedKD66YAaj5fTVyM6mX3kGfgGyvRJ6WhWFeUp9U5uOXj3tx1ugYwMZKVbnj-MFZxj1bXoJQS6hmlxgEg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+</div>
+<!-- Shimmer Particles Container -->
+<div class="absolute inset-0 pointer-events-none z-10" id="particle-container"></div>
+<!-- Content Overlay -->
+<div class="relative z-20 flex flex-col items-center text-center px-margin-mobile">
+<!-- Monogram -->
+<img alt="Gold Monogram" class="w-20 md:w-32 h-auto mb-12 opacity-90 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6STxZWluchXVG5sfd1EbPqc_S79HhVfFOA9NznKeLofMekU0QB-8XEUJOxZIsJdlBcycgZOhjEDJwoxNr_SBA6Jqv5iqAyFv_LsRDL5w416WXJ-S-3l1PCLwkE_Dp0vSpULof7OA3VHtHWbYEJW2P7baHTR05cW6geOPcG05-E4IHWJKEl5KgSOj5C0QHNhbJOPlh7DKl1DQNNl0qKMN21rdU5Qk7vlOlPREnDuQHeQk5jlKaA_nLpS-aq7IvAimnQpJCe9WWMf0"/>
+<!-- Couples Names -->
+<h1 class="font-display-signature text-[64px] md:text-[120px] text-champagne-gold text-glow leading-none mb-4 italic">
+                Dev &amp; Sithara
+            </h1>
+<!-- Wedding Date & Location -->
+<div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 mt-4">
+<span class="font-label-caps text-label-caps text-rose-gold tracking-[0.4em] uppercase">February 14, 2025</span>
+<span class="hidden md:block w-1 h-1 rounded-full bg-champagne-gold"></span>
+<span class="font-label-caps text-label-caps text-rose-gold tracking-[0.4em] uppercase">Udaipur, Rajasthan</span>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30">
+<span class="font-label-caps text-[10px] text-champagne-gold tracking-[0.5em] uppercase vertical-lr opacity-60">Scroll to Explore</span>
+<div class="scroll-line"></div>
+</div>
+</main>
+<!-- STORY PREVIEW (Editorial Content) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 mb-12 md:mb-0" data-aos="fade-up">
+<span class="font-label-caps text-label-caps text-champagne-gold mb-4 block">CHAPTER ONE</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 italic">The Golden Hour Promise</h2>
+<p class="font-body-lg text-body-lg text-ivory-white/70 mb-12 max-w-md">
+                    Where the desert sun meets the ancient stone of the City Palace, a new legacy begins. Join us as we celebrate a union crafted in the heart of Rajasthan's royal heritage.
+                </p>
+<button class="px-10 py-4 border border-champagne-gold/40 hover:border-champagne-gold text-champagne-gold font-label-caps text-label-caps transition-all group overflow-hidden relative">
+<span class="relative z-10">READ OUR STORY</span>
+<div class="absolute inset-0 bg-champagne-gold/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+</button>
+</div>
+<div class="md:col-span-7 relative">
+<div class="aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover transition-transform duration-[3000ms] hover:scale-110" data-alt="A cinematic wide shot of an ornate palace balcony in Udaipur during sunset. The golden hour light casts long dramatic shadows through carved arches. In the distance, a serene lake reflects the warm hues of the sky. The atmosphere is quiet, romantic, and steeped in ancient royal luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA-IcUkzTwK2oAKxf8T5pXW0i5-MlSlO-9NUDxlEeG1dCiXWfgnyMLfdB7uF10qSHdjLV0TyfWN9CZLwD_KD78wtOEKr71PEJIIzLwmq2jsq3EM1gVwXg3ElCGF0wnEGlfpRz2st-jM9jw8NWH5rrzXVd_pMdMBv8EO0uFzb3KuPVzXim2TvPIXLDUV0prATA3us5kLRQQnL553DWjF8U8GM0UQ2RFrsOakcKtAP6vsybXI0C2_C_FQbV7M8My9uK90ONOdKopJKM"/>
+</div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-royal-wine/40 backdrop-blur-xl border border-champagne-gold/20 p-6 hidden md:flex flex-col justify-end">
+<span class="font-display-signature text-headline-md text-champagne-gold italic">02.14.25</span>
+<p class="font-label-caps text-[10px] text-ivory-white/60 tracking-widest mt-2">SAVE THE DATE</p>
+</div>
+</div>
+</div>
+</section>
+<!-- EDITORIAL GALLERY TEASER -->
+<section class="bg-surface-dark py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg italic mb-6">Captured Moments</h2>
+<p class="font-body-md text-body-md text-ivory-white/50">A visual anthology of our journey leading up to the celebration. Each frame a testament to the quiet moments that defined our love.</p>
+</div>
+<a class="font-label-caps text-label-caps text-champagne-gold border-b border-champagne-gold/40 pb-2 hover:text-rose-gold hover:border-rose-gold transition-all" href="#">VIEW ALL GALLERY</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+<div class="aspect-[3/4] overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up artistic shot of intricate bridal henna patterns on hands adorned with vintage gold jewelry. The lighting is soft and moody, emphasizing the texture of the skin and the shimmer of the gold. The color palette is rich with deep reds and ochre tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6CIfIX45QzDStUsaqxwEN6zanu1l2Wr4aWcpQEYXkm_402bcwaGLvo_w_d9IZioippgVcpHJV39HSYwph4TIvwVB1kQpzqpAzysqLe4ktV2r8-ysutk0oWq5Oq_eRVz-14gGcdnTJP2YaW5D7S0M9maWQGTrmH7OEKAlXtiyuQW9oU7oUtlxVW12xAKShaQpOq67VHrqcAs0UQa4VK20wu6PqXhHwrAzmZDR6LKviV-ZbXp-TVQILNam6RIHbHVe2s_1UC_aBoA"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden mt-12 md:mt-24 group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A portrait of a groom in a traditional champagne-colored sherwani with intricate embroidery. He stands against a blurred background of palace pillars. The lighting is natural and high-contrast, creating an editorial feel. The mood is dignified and thoughtful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK2q64CO7VSIec7wrK_RqxWD6_Pks0n17fxSbTnbfhKn15GDXPqmwMQf_XAI7FgW96WEejpkuCMFH3FFKbKW96Px0vda3PhbP77myRMBarLdBL_1UPfZZJ7Daj6UfNyz4coEF0MarTY9FDzvvknFm5quV84Q59Xv89G5ItbFO3aH4LEwPRiqtY4U948yogDnhT2wSYd-lNmG_4XPFDYmtaEsbmZ2t3qyqXvuTN8EjWNAsp4HSUiXGXT8bCjejOUljtEZXRFxXRBsc"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Detail shot of a luxury wedding invitation on heavy burgundy cardstock with gold foil embossing. The invitation is surrounded by delicate jasmine flowers and silk ribbons. The composition is elegant and high-end, using a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzqStfk9i08_u8CTtIpNqKnoVMyvRx5F1fQlUl4ZZiM8q4m5kKyJpzhQfUJqPqIpKnj0x51A7RhbPzyg9lHG456vNHiyfwSmSEikBo6QzOpPQyPG9XxTqnBMEe3rqPC0EaF7CcTMkv-nAt44S1BqMlUVA3dBo8fLs3dVB2dNXmkVXG7r_mUS-9Zmeibzy9Ob3h7mPNb2-1CN4yk_7Y0l05ZvM1Cl0ccx8K8M8p-C6Mh91yJQF6B7QEJLjqqWF9ufLYo7ES6_5ies8"/>
+</div>
+<div class="aspect-[3/4] overflow-hidden mt-12 md:mt-24 group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Cinematic shot of a candlelit palace hallway at night. Thousands of small oil lamps or 'diyas' create a warm, flickering glow against the dark stone walls. The atmosphere is mystical, intimate, and deeply celebratory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOGGt-rodO2tHJH7miVJFpjAE0BUGsJKnNIa7m2qgaBz27AL2ckM7idj-82uSP6H73vmkFskZdM20Jt3zXEqpVngQEJNr-vMZsGyPWECBYJGNZQszLi2t_8IzRdUsxiOLpDRSHyK9NTp5Ggzy-37AkY4TH_fMQ3ahTroCXsjg7ZfUZc1t1iwFWpczQ1csypcmAVFa-4OfNefJoO2hyyjsFwjfedAS6DgccDKVbDvGZgvEL9mArOzVgiql1aS2Wjt0toi5xMX2iaIc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="w-full py-20 px-margin-mobile md:px-margin-desktop bg-surface-dark border-t border-champagne-gold/10">
+<div class="flex flex-col items-center gap-8 w-full max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<div class="font-display-signature text-headline-md text-rose-gold">Dev &amp; Sithara</div>
+<!-- Footer Links -->
+<div class="flex gap-10">
+<a class="text-ivory-white/60 font-body-md text-body-md hover:text-champagne-gold transition-all" href="#">Contact</a>
+<a class="text-ivory-white/60 font-body-md text-body-md hover:text-champagne-gold transition-all" href="#">Venue Map</a>
+<a class="text-ivory-white/60 font-body-md text-body-md hover:text-champagne-gold transition-all" href="#">Guestbook</a>
+</div>
+<!-- Copyright -->
+<div class="text-champagne-gold font-body-md text-body-md opacity-40">
+                © 2024 Dev &amp; Sithara. All rights reserved.
+            </div>
+<!-- Back to top action handled by native behavior -->
+<button class="mt-4 p-4 border border-champagne-gold/20 rounded-full hover:border-champagne-gold transition-all text-champagne-gold" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+</footer>
+<script>
+        // Particle Generation Script
+        const container = document.getElementById('particle-container');
+        const particleCount = 40;
+
+        for (let i = 0; i < particleCount; i++) {
+            createParticle();
+        }
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 4 + 1;
+            const startX = Math.random() * 100;
+            const startY = Math.random() * 100;
+            const duration = Math.random() * 10 + 5;
+            const delay = Math.random() * 5;
+
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${startX}%`;
+            particle.style.top = `${startY}%`;
+            particle.style.animation = `shimmer ${duration}s infinite ease-in-out ${delay}s`;
+            
+            container.appendChild(particle);
+        }
+
+        // Parallax Effect for Hero Image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.4}px) scale(${1.05 + scrolled * 0.0002})`;
+            }
+        });
+
+        // Simple smooth entrance for elements
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-aos="fade-up"]').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

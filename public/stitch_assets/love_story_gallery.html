@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400&amp;family=Montserrat:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#574500",
+                    "background": "#230c13",
+                    "surface-container-highest": "#482d34",
+                    "surface-bright": "#4d3139",
+                    "on-tertiary": "#591a26",
+                    "on-tertiary-fixed-variant": "#76303b",
+                    "secondary-container": "#af8d11",
+                    "on-tertiary-container": "#b86570",
+                    "on-secondary": "#3c2f00",
+                    "primary-fixed": "#ffd9dd",
+                    "surface-variant": "#482d34",
+                    "on-tertiary-fixed": "#3d0412",
+                    "on-secondary-container": "#342800",
+                    "surface-container": "#31181f",
+                    "on-secondary-fixed": "#241a00",
+                    "inverse-on-surface": "#442930",
+                    "on-primary": "#4f222b",
+                    "surface-dark": "#1A0309",
+                    "tertiary-fixed": "#ffd9dc",
+                    "surface-tint": "#fab4be",
+                    "secondary": "#e9c349",
+                    "inverse-surface": "#ffd9e1",
+                    "tertiary-fixed-dim": "#ffb2ba",
+                    "surface-dim": "#230c13",
+                    "tertiary-container": "#2f000a",
+                    "on-primary-fixed-variant": "#6a3841",
+                    "inverse-primary": "#854f58",
+                    "outline-variant": "#514345",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#350d17",
+                    "outline": "#9e8c8e",
+                    "secondary-fixed": "#ffe088",
+                    "surface": "#230c13",
+                    "surface-container-low": "#2c141b",
+                    "secondary-fixed-dim": "#e9c349",
+                    "rose-gold": "#E0B0FF",
+                    "surface-container-lowest": "#1c070e",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#3c222a",
+                    "on-background": "#ffd9e1",
+                    "champagne-gold": "#D4AF37",
+                    "on-primary-container": "#a96d76",
+                    "ivory-white": "#FFF5E1",
+                    "error-container": "#93000a",
+                    "on-surface": "#ffd9e1",
+                    "on-surface-variant": "#d6c2c3",
+                    "primary-fixed-dim": "#fab4be",
+                    "error": "#ffb4ab",
+                    "primary": "#fab4be",
+                    "primary-container": "#2a050e",
+                    "royal-wine": "#4A0E1B",
+                    "tertiary": "#ffb2ba"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px",
+                    "margin-desktop": "80px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "display-signature": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-caps": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "display-signature": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "300"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(74, 14, 27, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .fade-edges::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0) 70%);
+        }
+        .shimmer-btn:hover {
+            background: linear-gradient(90deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%);
+            background-size: 200% auto;
+            animation: shimmer 2s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+        .masonry {
+            column-count: 2;
+            column-gap: 32px;
+        }
+        @media (max-width: 768px) {
+            .masonry {
+                column-count: 1;
+            }
+        }
+        .img-hover-effect {
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .img-hover-effect:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-champagne-gold selection:text-background overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-royal-wine/40 backdrop-blur-2xl border-b border-champagne-gold/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-display-signature text-headline-lg text-champagne-gold tracking-tight">D&amp;S</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-champagne-gold font-bold border-b-2 border-champagne-gold pb-1 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Our Story</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Gallery</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">Events</a>
+<a class="text-ivory-white/80 font-body-md text-body-md hover:text-rose-gold transition-colors duration-500" href="#">RSVP</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-champagne-gold font-label-caps text-label-caps uppercase hover:text-rose-gold transition-colors">Telugu / English</button>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-champagne-gold">menu</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Section 1: Our Story (Hero/Editorial Split) -->
+<section class="min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden relative">
+<div class="w-full md:w-1/2 flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-20 bg-surface-dark relative z-10">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-rose-gold uppercase tracking-[0.4em] mb-6 block">The Beginning</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-champagne-gold mb-10 leading-tight">
+                        A Journey of <br/> <i class="font-normal italic">Two Souls</i> Intertwined
+                    </h1>
+<div class="space-y-6 font-body-lg text-body-lg text-ivory-white/80 leading-relaxed">
+<p>It started with a shared glance across a crowded room in Hyderabad, a moment frozen in time that neither of us could have predicted would lead here. Dev, with his quiet strength and Sithara, with her radiant joy, found a harmony that felt as ancient as the stars.</p>
+<p>From the bustling streets of India to the serene landscapes of our travels together, every step has been a chapter in a story written with laughter, deep conversations, and an unwavering belief in one another. Ours is not just a wedding; it's a celebration of a friendship that evolved into the greatest love we've ever known.</p>
+</div>
+<div class="mt-12 flex gap-8 items-center">
+<button class="px-8 py-4 bg-champagne-gold text-surface-dark font-label-caps text-label-caps tracking-widest uppercase hover:opacity-90 transition-all shimmer-btn">Read More</button>
+<div class="h-px w-24 bg-gradient-to-r from-champagne-gold to-transparent"></div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-[60vh] md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-[3s]" data-alt="A cinematic, high-fashion editorial portrait of a groom in a cream sherwani and a bride in a rich red lehenga, captured in soft golden hour lighting. They are looking into each other's eyes with a romantic and sophisticated mood. The background is a soft-focus architectural detail of a premium heritage venue in India, emphasizing luxury and timeless elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMXtcxU_G6Z980HlCN4XUHcEdRGsbhCKMUjd-0bMxt_8tg9pI1bFNasYBhlqzTELhG1hi_mFXf4egP8fuIRwsSnO9Bs4e1Lt-jRW6VHmEjo4VL_skNsAGfcrzY0QBkaURrboDiwuUT2LMJosfPWrh6APqVmmkOw5T91vomKMTl_jGFALLpGLnjxvh707QIGXQvtjkxiYj9I0QWMTgXlcOnC5mwzC9K_h6Dp888Q4BWhmCEOAdyES7bYBK8n1oKJI4ttfJYaNKEr6w"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dark via-transparent to-transparent hidden md:block"></div>
+<div class="absolute bottom-10 left-10 glass-card p-6 border border-champagne-gold/20 max-w-xs">
+<p class="font-label-caps text-[10px] text-rose-gold uppercase mb-2">Location</p>
+<p class="font-headline-md text-headline-md text-champagne-gold text-lg">Faluknuma Palace</p>
+</div>
+</div>
+</section>
+<!-- Section 2: A Glimpse into Our World (Masonry Gallery) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
+<div class="flex flex-col items-center mb-20 text-center">
+<span class="font-label-caps text-label-caps text-rose-gold uppercase tracking-[0.5em] mb-4">Visual Poetry</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-champagne-gold">A Glimpse into Our World</h2>
+<div class="mt-6 w-32 h-px bg-gradient-to-r from-transparent via-champagne-gold to-transparent"></div>
+</div>
+<div class="masonry max-w-container-max mx-auto">
+<!-- Gallery Item 1 -->
+<div class="break-inside-avoid mb-10 group">
+<div class="relative overflow-hidden border border-champagne-gold/10 img-hover-effect">
+<img class="w-full transition-transform duration-700 group-hover:scale-110" data-alt="Intricate henna designs on a bride's hands, captured in an extreme close-up editorial style. The lighting is soft and warm, highlighting the fine details of the traditional patterns against a deep burgundy fabric. The overall mood is intimate and celebratory, reflecting high-end Indian wedding preparations." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ewUau_kZzS4sRyIsUnheMxI6IdxqTvx0rGHDYztIlEv4chHN6c1hj5LYRUAuCsBYghyW5vj1tU5C1z6vytzCkAvln-cgORBT6FPTfptXZzPfdl4uWSjXuFRQBjnJKTwtozr45nGBvG0HqPRW0upBXLaRDgfxgk3uc5nuzGZVDQ-B06oZEa1dccycquFoLGpMXmacNk0MK4Ik9LRXoKitdMlDQ3w_-ie-6_fmTShNT2HeFqjvdf5fN2ZpYTCaJPMXrMJjJ0f_9C8"/>
+<div class="absolute inset-0 bg-royal-wine/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<div>
+<p class="font-label-caps text-label-caps text-champagne-gold uppercase">The Ritual</p>
+<p class="font-headline-md text-headline-md text-ivory-white text-xl">Henna Details</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Item 2 - Large Feature -->
+<div class="break-inside-avoid mb-10 group">
+<div class="relative overflow-hidden border border-champagne-gold/10 img-hover-effect">
+<img class="w-full transition-transform duration-700 group-hover:scale-110" data-alt="A grand, luxury wedding venue decorated with thousands of white roses and golden chandeliers. The setting is ethereal and cinematic, with soft theatrical lighting creating a dreamlike atmosphere. A pristine white aisle leads to an ornate floral mandap, embodying high-end fashion editorial aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqh76szKN916Gxa198cOK-NAXCove_V7jMtqjWdHl9KNmax3OaxMkj4QaWyn5RWUigfXI-3hcXjKoa9R78P9pXOdS504swhUJpZpYgNDE9_EE9FNqPYddfzwiFvW-MxH1W22DJyPV_twsTZOgI7Gvs8-xf92JvWN5YmtZwQ1cZmyTNJagpKbYAv6R6oZSKmkagNS1yJVrNNlt33oh_B9XqwwCcrKBTn6qZ1ohVDi4DHzCdrnXRG8Vx_niJTdnErJEQDDncP6OFNL4"/>
+<div class="absolute inset-0 bg-royal-wine/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<div>
+<p class="font-label-caps text-label-caps text-champagne-gold uppercase">The Venue</p>
+<p class="font-headline-md text-headline-md text-ivory-white text-xl">Luxury Celebration</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="break-inside-avoid mb-10 group">
+<div class="relative overflow-hidden border border-champagne-gold/10 img-hover-effect">
+<img class="w-full transition-transform duration-700 group-hover:scale-110" data-alt="Detailed close-up of traditional Indian wedding jewelry, including a heavy kundan necklace and earrings laid out on a velvet cushion. The jewelry sparkles under soft spotlighting, featuring emeralds and rubies set in gold. The shot is high-contrast and editorial, focused on luxury and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5f_j3t_wquN9NZIizBJG6GlBJRQD6D3Sm1NsJq3CIiTBN5z5eHmKKXHGs_CtnviN221fIhLUvK0s4dl48FwU4yYCDHoUxSXzoO3b-DSPz9IlAr5dTT5FR7Usbd_R8jWnsfL1SjB3YOyHR1nxvaA1rq-YP-fSE1lZRGnEM1-Dh2Q0qMyOY_VwA_lKQ76F9bTatFrMkjVqaBXzk13vPe8l87jxZqmqRYIKqo_G-LGWJx4OGsaUTtKPKw_SgNcnldEEMuRA6nZkdGeo"/>
+<div class="absolute inset-0 bg-royal-wine/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<div>
+<p class="font-label-caps text-label-caps text-champagne-gold uppercase">Heritage</p>
+<p class="font-headline-md text-headline-md text-ivory-white text-xl">Traditional Finery</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Item 4 - Placeholder from prompt -->
+<div class="break-inside-avoid mb-10 group">
+<div class="relative overflow-hidden border border-champagne-gold/10 img-hover-effect">
+<img class="w-full transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCU5SsJn9TLSjLXVR89wCnmCYPjfI9dkeQlP5pOc7G4AYhQiOKRCOxgTr5xAjFlNOkv5pkph4-9Yj46oFvhnnTFpfLNmKPSi-Of2xIKH-kqDL7nTTPVG9C11IUlSE_yhVg26GB8D92bnmgrH1qigqb0VEETSAsbBL_XS54NzCCQHvyfuXKJlURvTBjIInRgGk038OkKHnSjCrbegsEBoBgHl7dMd7zwwcyYeED5IoC0lMEpht3M3dGf51zCsEhBT6Ie5txbLgy4Lk"/>
+<div class="absolute inset-0 bg-royal-wine/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<div>
+<p class="font-label-caps text-label-caps text-champagne-gold uppercase">Moments</p>
+<p class="font-headline-md text-headline-md text-ivory-white text-xl">Candid Joy</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Item 5 -->
+<div class="break-inside-avoid mb-10 group">
+<div class="relative overflow-hidden border border-champagne-gold/10 img-hover-effect">
+<img class="w-full transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic wide shot of the couple walking through a lush, manicured garden at night, illuminated by hundreds of hanging fairy lights and lanterns. The mood is magical and romantic, with a soft blur in the foreground and the royal wine and gold color palette dominating the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD22iABmwDXBVNaCmQt_2RVVtzwCyPlG8FDlERLNR8yXHV_8MmOJffkuAk4Grb3gGYwyuv67g_Ib0CvYNschItM-GUa-rCUqgzX-Kr06KXO52amT5AFyb2qMaRLVhxR0jtqdLtOTRkRAGn-vXnT_au3bxCcmF4-q8U3R_55bKV7mBJBGJseUGXsHjyvMRt6LSh6yvDlh8Vtmz06NKm8iRzVbd6lQCh5QtSu3YLxhONMAvcmFuZxrw3swPJoHgugJjwvm8SXqN9hINk"/>
+<div class="absolute inset-0 bg-royal-wine/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+<div>
+<p class="font-label-caps text-label-caps text-champagne-gold uppercase">Nightfall</p>
+<p class="font-headline-md text-headline-md text-ivory-white text-xl">Under the Stars</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="border border-champagne-gold text-champagne-gold px-12 py-4 font-label-caps text-label-caps tracking-widest uppercase hover:bg-champagne-gold hover:text-surface-dark transition-all duration-500">View Full Gallery</button>
+</div>
+</section>
+<!-- Interactive Divider -->
+<div class="w-full h-px relative overflow-hidden bg-champagne-gold/10">
+<div class="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-rose-gold/40 to-transparent animate-[shimmer_5s_infinite]"></div>
+</div>
+<!-- Quote Section -->
+<section class="py-section-gap px-margin-mobile flex justify-center items-center bg-surface-dark">
+<div class="max-w-3xl text-center space-y-8">
+<span class="material-symbols-outlined text-champagne-gold text-4xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-md text-headline-md italic text-ivory-white/90 leading-relaxed">
+                    "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
+                </p>
+<div class="flex items-center justify-center gap-4">
+<div class="h-px w-8 bg-champagne-gold/40"></div>
+<span class="font-label-caps text-label-caps text-champagne-gold uppercase tracking-[0.3em]">Maya Angelou</span>
+<div class="h-px w-8 bg-champagne-gold/40"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-margin-mobile md:px-margin-desktop bg-surface-dark border-t border-champagne-gold/10 flex flex-col items-center gap-8">
+<div class="font-display-signature text-headline-md text-rose-gold">Dev &amp; Sithara</div>
+<div class="flex gap-12 text-body-md font-body-md">
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all" href="#">Contact</a>
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all" href="#">Venue Map</a>
+<a class="text-ivory-white/60 hover:text-champagne-gold transition-all" href="#">Guestbook</a>
+</div>
+<div class="mt-8 flex gap-6">
+<a class="w-10 h-10 rounded-full border border-champagne-gold/20 flex items-center justify-center text-champagne-gold hover:bg-champagne-gold hover:text-surface-dark transition-all" href="#">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-champagne-gold/20 flex items-center justify-center text-champagne-gold hover:bg-champagne-gold hover:text-surface-dark transition-all" href="#">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-champagne-gold/20 flex items-center justify-center text-champagne-gold hover:bg-champagne-gold hover:text-surface-dark transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+<div class="mt-12 text-ivory-white/40 font-body-md text-sm">
+            © 2024 Dev &amp; Sithara. All rights reserved.
+        </div>
+<button class="fixed bottom-10 right-10 w-12 h-12 glass-card border border-champagne-gold/30 rounded-full flex items-center justify-center text-champagne-gold hover:scale-110 transition-transform z-40" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</footer>
+<script>
+        // Subtle Reveal Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10', 'opacity-0');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .break-inside-avoid').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'translate-y-10', 'opacity-0');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
