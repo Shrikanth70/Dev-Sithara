@@ -79,7 +79,7 @@ export default function Hero({ lang }) {
           initial={{ opacity: 0, scale: 0.8, y: -20 }}
           animate={{ opacity: 0.95, scale: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          className="w-40 h-40 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-[#D4AF37] via-[#FFF5E1] to-[#B8860B] p-[6px] shadow-[0_0_35px_rgba(212,175,55,0.4)] mb-4 md:mb-6 group select-none relative overflow-hidden shrink-0"
+          className="w-28 h-28 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-[#D4AF37] via-[#FFF5E1] to-[#B8860B] p-[6px] shadow-[0_0_35px_rgba(212,175,55,0.4)] mb-2 md:mb-6 group select-none relative overflow-hidden shrink-0"
         >
           <div className="w-full h-full rounded-full border-4 border-royal-wine/40 overflow-hidden bg-royal-wine/5">
             <img 
@@ -105,7 +105,7 @@ export default function Hero({ lang }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
-          className="font-script text-4xl sm:text-6xl md:text-[130px] text-gold leading-[1.6] py-2 md:py-4 tracking-normal drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] pr-2 select-text overflow-visible shrink-0 whitespace-nowrap"
+          className="font-script text-4xl sm:text-6xl md:text-[130px] text-gold leading-[1.1] md:leading-[1.6] py-1 md:py-4 tracking-normal drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] pr-2 select-text overflow-visible shrink-0 whitespace-nowrap"
         >
           Dev <span className="font-serif text-2xl sm:text-3xl md:text-5xl text-ivory-white/40 italic mx-2 md:mx-4">&</span> Sithara
         </motion.h1>
@@ -115,7 +115,7 @@ export default function Hero({ lang }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.2 }}
-          className="flex flex-col md:flex-row items-center gap-3 md:gap-8 mt-4 md:mt-6 border-t border-b border-champagne-gold/20 py-4 px-8 shrink-0"
+          className="flex flex-col md:flex-row items-center gap-1.5 md:gap-8 mt-2 md:mt-6 border-t border-b border-champagne-gold/20 py-2 md:py-4 px-8 shrink-0"
         >
           <span className="font-cinzel text-sm md:text-base text-champagne-gold tracking-[0.3em] uppercase">
             {t.dateFull}
