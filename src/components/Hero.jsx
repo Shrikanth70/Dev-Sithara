@@ -32,7 +32,7 @@ export default function Hero({ lang }) {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-between pt-6 pb-4 md:pt-8 md:pb-14 overflow-hidden bg-black select-none">
+    <section ref={heroRef} className="relative min-h-screen w-full flex flex-col items-center justify-between pt-6 pb-4 md:pt-8 md:pb-14 overflow-hidden bg-black select-none">
       {/* Background Image with parallax */}
       <div 
         className="absolute inset-0 z-0 transition-transform will-change-transform"
