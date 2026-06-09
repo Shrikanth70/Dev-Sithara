@@ -32,7 +32,7 @@ export default function Hero({ lang }) {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-center pt-6 pb-4 md:pt-8 md:pb-5 overflow-hidden bg-black select-none">
+    <section ref={heroRef} className="relative h-screen w-full flex flex-col items-center justify-between pt-6 pb-4 md:pt-8 md:pb-14 overflow-hidden bg-black select-none">
       {/* Background Image with parallax */}
       <div 
         className="absolute inset-0 z-0 transition-transform will-change-transform"
@@ -73,7 +73,7 @@ export default function Hero({ lang }) {
       <div className="h-8 md:h-12 w-full shrink-0"></div>
 
       {/* Hero Content Panel */}
-      <div className="relative z-20 text-center px-6 max-w-4xl flex-1 flex flex-col items-center justify-center">
+      <div className="relative z-20 text-center px-6 max-w-4xl flex-1 flex flex-col items-center justify-center md:pb-10">
         {/* Circular Couple Portrait with Royal Border */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8, y: -20 }}
@@ -127,12 +127,12 @@ export default function Hero({ lang }) {
         </motion.div>
       </div>
 
-      {/* Scroll Explore Indicator - absolutely pinned to bottom so it's always visible */}
+      {/* Scroll Explore Indicator - flex child, always below content */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2 z-30"
+        className="flex flex-col items-center gap-1 md:gap-2 z-30 shrink-0"
       >
         <span className="font-montserrat text-[10px] text-champagne-gold tracking-[0.4em] uppercase opacity-75">
           {t.scrollExplore}
