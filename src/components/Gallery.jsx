@@ -164,65 +164,72 @@ export default function Gallery({ lang }) {
         </div>
       </div>
 
-      {/* Custom Fullscreen Lightbox Modal */}
+      {/* Compact Elegant Image Viewer */}
       <AnimatePresence>
         {activeIdx !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] bg-black/95 backdrop-blur-lg flex items-center justify-center p-4"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[150] bg-black/80 backdrop-blur-sm flex items-center justify-center p-6"
             onClick={() => setActiveIdx(null)}
           >
-            {/* Close Button */}
-            <button 
-              onClick={() => setActiveIdx(null)}
-              className="absolute top-6 right-6 text-ivory-white/60 hover:text-champagne-gold w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/5 transition-all z-160 focus:outline-none"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Left Button */}
-            <button 
-              onClick={handlePrev}
-              className="absolute left-6 text-ivory-white/60 hover:text-champagne-gold w-14 h-14 flex items-center justify-center rounded-full hover:bg-white/5 transition-all z-160 focus:outline-none"
-            >
-              <ChevronLeft className="w-8 h-8" />
-            </button>
-
-            {/* Center Image Container */}
+            {/* Compact image card */}
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="max-w-4xl max-h-[80vh] w-full flex flex-col items-center justify-center relative z-10"
+              initial={{ scale: 0.92, opacity: 0, y: 12 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 12 }}
+              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              className="relative max-w-lg w-full z-10"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={images[activeIdx].src}
-                alt={images[activeIdx].title}
-                className="max-w-full max-h-[75vh] object-contain border border-champagne-gold/20 shadow-2xl rounded-sm"
-              />
-              
-              {/* Caption details below image */}
-              <div className="text-center mt-6">
-                <span className="font-montserrat text-[10px] text-rose-gold tracking-[0.3em] uppercase block mb-1">
-                  {images[activeIdx].category}
-                </span>
-                <h3 className="font-serif text-xl text-ivory-white">
-                  {images[activeIdx].title}
-                </h3>
-              </div>
-            </motion.div>
+              {/* Gold accent frame */}
+              <div className="p-[1px] rounded-sm bg-gradient-to-br from-[#D4AF37]/60 via-[#FFF5E1]/20 to-[#B8860B]/60 shadow-[0_8px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(212,175,55,0.15)]">
+                <div className="relative rounded-sm overflow-hidden bg-black">
+                  <img
+                    src={images[activeIdx].src}
+                    alt={images[activeIdx].title}
+                    className="w-full max-h-[55vh] object-contain block"
+                  />
 
-            {/* Right Button */}
-            <button 
-              onClick={handleNext}
-              className="absolute right-6 text-ivory-white/60 hover:text-champagne-gold w-14 h-14 flex items-center justify-center rounded-full hover:bg-white/5 transition-all z-160 focus:outline-none"
-            >
-              <ChevronRight className="w-8 h-8" />
-            </button>
+                  {/* Caption bar */}
+                  <div className="px-5 py-3 bg-black/80 border-t border-champagne-gold/15 flex items-center justify-between">
+                    <div>
+                      <span className="font-montserrat text-[9px] text-rose-gold tracking-[0.25em] uppercase block">
+                        {images[activeIdx].category}
+                      </span>
+                      <h3 className="font-serif text-sm text-ivory-white tracking-wide">
+                        {images[activeIdx].title}
+                      </h3>
+                    </div>
+                    {/* Inline nav arrows */}
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={handlePrev}
+                        className="w-8 h-8 rounded-full bg-white/5 border border-champagne-gold/20 text-champagne-gold flex items-center justify-center hover:bg-champagne-gold hover:text-background-dark transition-all duration-200 focus:outline-none"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="w-8 h-8 rounded-full bg-white/5 border border-champagne-gold/20 text-champagne-gold flex items-center justify-center hover:bg-champagne-gold hover:text-background-dark transition-all duration-200 focus:outline-none"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Close button — top-right corner of card */}
+              <button
+                onClick={() => setActiveIdx(null)}
+                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-background-dark border border-champagne-gold/30 text-champagne-gold flex items-center justify-center hover:bg-champagne-gold hover:text-background-dark transition-all duration-200 z-20 focus:outline-none shadow-lg"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

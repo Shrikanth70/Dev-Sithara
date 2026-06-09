@@ -102,8 +102,8 @@ export default function Events({ lang }) {
           <div className="mt-6 w-32 h-[1px] bg-gradient-to-r from-transparent via-champagne-gold to-transparent mx-auto"></div>
         </div>
 
-        {/* Card grid - horizontal scroll on mobile, 3-col grid on desktop */}
-        <div className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+        {/* Card list - vertical stack on all screen sizes */}
+        <div className="flex flex-col gap-6">
           {eventList.map((ev, idx) => (
             <motion.div 
               key={idx}
@@ -111,7 +111,7 @@ export default function Events({ lang }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: idx * 0.2, ease: "easeOut" }}
-              className="bg-royal-wine/25 backdrop-blur-md p-8 rounded-lg border border-champagne-gold/15 flex flex-col justify-between group relative overflow-hidden shadow-2xl hover:-translate-y-2 hover:border-champagne-gold/30 transition-all duration-300 shrink-0 w-[80vw] snap-start md:w-auto"
+              className="bg-royal-wine/25 backdrop-blur-md p-8 rounded-lg border border-champagne-gold/15 flex flex-col justify-between group relative overflow-hidden shadow-2xl hover:-translate-y-2 hover:border-champagne-gold/30 transition-all duration-300"
             >
               {/* Top Accent Line */}
               <div className="absolute top-0 inset-x-0 h-[3px] bg-gold-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
